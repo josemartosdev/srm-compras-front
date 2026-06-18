@@ -39,7 +39,7 @@ export default function MuestraDetailPage() {
           e?.fecha && { label: 'Fecha', value: fmtDate(e.fecha) },
           e?.usuarioNombre && { label: 'Responsable', value: e.usuarioNombre },
           { label: 'Documentación', value: e?.documentacion ? 'Completa' : 'Pendiente' },
-        ].filter((h) => h.value)}
+        ].filter((h) => Boolean(h?.value))}
         stats={[
           { icon: 'mail', label: 'Correos vinculados', value: stats.emails },
           { icon: 'event', label: 'Eventos vinculados', value: stats.eventos },
